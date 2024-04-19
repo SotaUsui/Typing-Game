@@ -1,0 +1,104 @@
+body {
+    overflow: hidden;
+    background-color: #AED6F1;
+}
+
+h1 {
+    text-align: left;
+    margin-left: 120px;
+    font-weight: bold;
+    transform: scale(1.2);
+}
+
+h2 {
+    background-color: white;
+}
+
+.ready-to-play {
+    text-align: center;
+    padding: 20px;
+    transform: scale(1.4);
+}
+
+.custom-image {
+    text-align: center;
+    transform: scale(0.7);
+}
+
+.correct {
+  color: gray;
+}
+
+.playend {
+    transform: scale(1.5);
+    background-color: #6495ED;
+}
+
+.playend h2 {
+    background-color: #6495ED;
+}
+
+.playend button {
+    color: green;
+    background-color: yellow;
+    cursor: pointer;
+
+}
+
+.playend button:first-child {
+    margin-left: 100px;
+}
+
+.playend button:last-child {
+    font-size: 110%;
+    margin-left: 250px;
+}
+
+
+table{
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    border: 2px solid rgb(140 140 140);
+    font-family: sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    background-color: white;
+}
+
+thead{
+    background-color: lightblue;
+    font-weight: bold;
+}
+
+th,td{
+    border: 1px solid rgb(160 160 160);
+    padding: 8px 10px;
+    text-align: center;
+}
+
+#mainMenuForm {
+    position: relative;
+}
+
+#mainMenuForm button{
+    transform: scale(1.2);
+    position: absolute;
+    bottom: 5px;
+    right: 30px; 
+}
+
+.checkRanking {
+    position: relative;
+}
+
+.link {
+    position: absolute;
+    right: 150px;
+    color: black;
+}
+
+.link:hover {
+    background-color: black;
+    color: white;
+}

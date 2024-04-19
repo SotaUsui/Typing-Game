@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Ranking page</title>
+        <link rel="stylesheet" href="../static/css/styles.css">
+    </head>
+    <body>
+        <h1>
+            Typing Game
+        </h1>
+        <h2>
+            <table>
+
+                <thead name="header">
+                    <tr>
+                        <th scope="col">Username</th>
+                        <th scope="col">Score</th>
+                    </tr>
+                </thead>
+                <tbody name="body">
+                    {% for score in scores %}
+                    <tr>
+                        <th scope="row">{{score.username}}</th>
+                        <td>{{score.score / 100}} s</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <br>
+
+            <form id="mainMenuForm" method="post">
+                <button type="submit">Main Menu</button>
+            </form>
+        </h2>
+        
+    </body>
+</html>

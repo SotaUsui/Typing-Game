@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Index page</title>
+        <link rel="stylesheet" href="../static/css/styles.css">
+    </head>
+    <body>
+        <h1>
+            Typing Game
+        </h1>
+        <h2>
+            {% if message %}
+                <p>{{ message }}</p>
+            {% endif %}
+            <div id = "click-to-play" class = "ready-to-play">
+                <form method='POST'>
+                    <label for="username">Username:</label>
+                    <input type="text" name="username" required>
+                    <br>
+                    <input type="submit" value="Play" id="playButton">
+                </form>
+            </div>
+
+            <br>
+
+            <div class="checkRanking">
+                <a href="/ranking/" class="link">Ranking Page</a>
+            </div>
+
+            <img src="{{url_for('static', filename='img/typingCat.jpg')}}" class="custom-image">
+        </h2>
+        
+    </body>
+</html>

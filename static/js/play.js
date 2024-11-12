@@ -1,7 +1,7 @@
 
 class TypingGame extends React.Component {
     constructor(props) {
-        super(props);
+        super(props);        // enable to use "this" state.
         this.state = {
             sentence: "This is a typing game.",
             userInput: "",
@@ -10,22 +10,26 @@ class TypingGame extends React.Component {
             game: true 
         };
     }
+    // Cycle method
+    // defined when method works
     componentDidMount() {
-        this.interval = setInterval(this.tick, 10);
-        window.addEventListener('keydown', this.getInput);
+        this.interval = setInterval(this.tick, 10);            // update time by calling tick function by 0.01s
+        window.addEventListener('keydown', this.getInput);     // check user input, and call getInput function.
     }
-
+    // end methods
     componentWillUnmount() {
         clearInterval(this.interval);
         window.removeEventListener('keydown', this.getInput);
     }
 
+    // update time
     tick = () => {
         this.setState((prevState) => ({
             time: prevState.time + 1
         }));
     };
 
+    // get keyboard input
     getInput = (event) => {
         const { sentence, pass } = this.state;
         const ui = event.key;
@@ -35,6 +39,7 @@ class TypingGame extends React.Component {
         });
     };
 
+    // check user input and the letter user suppose to type
     checkInput() {
         const { userInput, pass, currChar, sentence} = this.state;
         console.log('userInput:', userInput);
@@ -53,13 +58,14 @@ class TypingGame extends React.Component {
 
     };
 
+    // cehck if the game is done
     checkGame() {
         const { pass, sentence } = this.state;
         if (pass == sentence.length){
             clearInterval(this.interval);
 
             this.setState({game: false}, () => {
-                // Send POST request to Flask backend
+                // Send POST request to Flask backend and store the score.
                 fetch('/game-end', {
                     method: 'POST',
                     headers: {
@@ -79,13 +85,12 @@ class TypingGame extends React.Component {
         }
     }
 
-
+    // draw game screen
     render() {
         const { sentence, time, userInput, pass, game } = this.state;
         const seconds = Math.floor(time / 100);
         const milliseconds = (time % 100).toString().padStart(2, '0');
 
-        //if (game){
         return (
             <div>
                 <div className = "playing">
